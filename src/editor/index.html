@@ -35,11 +35,13 @@
   const svgEditor = new Editor(document.getElementById('container'))
   svgEditor.setConfig({
     allowInitialUserOverride: true,
-    extensions: [],
-    noDefaultExtensions: false,
+    extensions: ["ext-django_opensave"],
+    noDefaultExtensions: true,
     userExtensions: [/* { pathName: '/packages/react-test/dist/react-test.js' } */]
   })
   svgEditor.init()
+  svgEditor.current_url = "XXX"
+  svgEditor.csrfToken = "YY"
   // Variable XDOMAIN below is created by Rollup for the Xdomain build (see rollup.config.js)
   /* globals XDOMAIN */
   try { // try clause to avoid js to complain if XDOMAIN undefined
